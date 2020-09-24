@@ -204,9 +204,13 @@ const LatestUser = () => {
     return <>Say coucou to {name}, they don't have interests yet, let's help them !</>;
   }
 
-  const interestList = interests.map(x => x.name).join(', ');
+  const interestList = interests.map(x => x.title).join(', ');
   return <>Please welcome {name}, fun fact: they like {interestList} !!</>;
 }
 
 export default LatestUser;
 ```
+
+#### For production
+
+When running `GraphQL Server` over multiple instances or in a production environment (where in-memory pubsub isn't recommended) consider using an external solution like [graphql-redis-subscriptions](https://github.com/davidyaha/graphql-redis-subscriptions) so all connections are notified of events consistently.

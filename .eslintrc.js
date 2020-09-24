@@ -7,6 +7,6 @@ module.exports = {
     'eslint-plugin-graphql',
   ],
   rules: {
-    "class-methods-use-this": ["warn"],
+    'class-methods-use-this': ['warn'],
   },
 };

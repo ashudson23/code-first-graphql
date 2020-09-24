@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  name: String!
+  interestIds: [ID!]!
+  interests: [Interest!]!
+}
+
+type Interest {
+  id: ID!
+  title: String!
+}
+
+type Query {
+  user(id: String!): User!
+  users(skip: Int = 0, take: Int = 25): [User!]!
+  interest(id: String!): Interest!
+  interests(skip: Int = 0, take: Int = 25, interestIds: [String!] = null): [Interest!]!
+}
+
+type Mutation {
+  createUser(createUserData: CreateUser!): User!
+  removeUser(id: String!): Boolean!
+  createInterest(createInterestData: CreateInterest!): Interest!
+  removeInterest(id: String!): Boolean!
+}
+
+input CreateUser {
+  name: String!
+  interestIds: [ID!] = []
+}
+
+input CreateInterest {
+  title: String!
+}
+
+type Subscription {
+  userAdded: User!
+  interestAdded: Interest!
+}

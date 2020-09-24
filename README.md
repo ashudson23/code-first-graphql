@@ -35,7 +35,7 @@ npm run serve
 
 ```graphql
 {
-  users () {
+  users {
     name
   }
 }
